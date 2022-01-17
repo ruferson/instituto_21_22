@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Tqdev\PhpCrudApi\Api;
 use Tqdev\PhpCrudApi\Config;
 use App\Http\Controllers\API\CentroController;
+use App\Http\Controllers\API\NivelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\API\CentroController;
 */
 
 Route::apiResource('centros', CentroController::class);
+Route::apiResource('niveles', NivelController::class) -> parameters(['niveles' => 'nivel']);
 
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
