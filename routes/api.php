@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
+use App\Http\Controllers\API\MateriaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ServerRequestInterface;
@@ -25,6 +26,9 @@ Route::apiResource('niveles', NivelController::class)
 ->parameters([
     'niveles' => 'nivel'
 ]);
+
+Route::apiResource('materias', MateriaController::class);
+
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
     $config = new Config([
