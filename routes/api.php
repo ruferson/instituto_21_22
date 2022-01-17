@@ -29,7 +29,7 @@ Route::apiResource('niveles', NivelController::class)
 
 Route::apiResource('materiasmatriculadas', MateriaMatriculadaController::class)
 ->parameters([
-    'materiasmatriculadas' => 'materiamatriculada'
+    'materiasmatriculadas' => 'materiaMatriculada'
 ]);
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
