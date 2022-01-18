@@ -15,9 +15,9 @@ class CreateFaltasProfesoresTable extends Migration
     {
         Schema::create('faltas_profesores', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('profesor_falta')->nullable();
+            $table->bigInteger('profesor_falta')->unsigned();
             $table->bigInteger('profesor_guardia')->nullable();
-            $table->bigInteger('periodoclase_id');
+            $table->bigInteger('periodoclase_id')->unsigned();
             $table->timestamps();
         });
     }
