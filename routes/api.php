@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
-use App\Http\Controllers\API\FaltaProfesorController;
+
+use App\Http\Controllers\API\falta_profesorController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ServerRequestInterface;
@@ -26,7 +28,8 @@ Route::apiResource('niveles', NivelController::class)
 ->parameters([
     'niveles' => 'nivel'
 ]);
-Route::apiResource('faltas_profesores', NivelController::class)
+
+Route::apiResource('faltas_profesores', falta_profesorController::class)
 ->parameters([
     'faltas_profesores' => 'falta_profesor'
 ]);
