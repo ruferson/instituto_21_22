@@ -3,7 +3,11 @@
 use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
 
+
 use App\Http\Controllers\API\falta_profesorController;
+
+
+use App\Http\Controllers\API\MateriaController;
 
 use App\Http\Controllers\API\MatriculaController;
 use App\Http\Controllers\API\PeriodoLectivoController;
@@ -35,10 +39,15 @@ Route::apiResource('niveles', NivelController::class)
     'niveles' => 'nivel'
 ]);
 
+
 Route::apiResource('faltas_profesores', falta_profesorController::class)
 ->parameters([
     'faltas_profesores' => 'falta_profesor'
 ]);
+
+
+Route::apiResource('materias', MateriaController::class);
+
 Route::apiResource('periodosLectivos', PeriodoLectivoController::class);
 Route::apiResource('materiasmatriculadas', MateriaMatriculadaController::class)
 ->parameters([
