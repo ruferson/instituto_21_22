@@ -15,14 +15,14 @@ class CreateGruposTable extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
-            $table->integer('curso');
-            $table->string('letra');
-            $table->string('nombre');
-            $table->integer('tutor');
-            $table->integer('anyoescolar');
-            $table->integer('nivel');
-            $table->boolean('verificado');
-            $table->integer('creador');
+            $table->bigInteger('curso')->nullable();
+            $table->string('letra', 512)->nullable();
+            $table->string('nombre', 512)->nullable();
+            $table->bigInteger('tutor')->nullable();
+            $table->bigInteger('anyoescolar')->unsigned();
+            $table->bigInteger('nivel')->unsigned();
+            $table->boolean('verificado')->nullable();
+            $table->bigInteger('creador')->unsigned();
             $table->timestamps();
         });
     }

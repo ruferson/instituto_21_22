@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
-use APP\Http\Controllers\API\GrupoController;
+use App\Http\Controllers\API\GrupoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ServerRequestInterface;
