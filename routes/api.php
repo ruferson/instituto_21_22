@@ -4,6 +4,7 @@ use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
 
 use App\Http\Controllers\API\MatriculaController;
+use App\Http\Controllers\API\PeriodoLectivoController;
 use App\Http\Controllers\API\MateriaMatriculadaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route::apiResource('niveles', NivelController::class)
     'niveles' => 'nivel'
 ]);
 
+Route::apiResource('periodosLectivos', PeriodoLectivoController::class);
 Route::apiResource('materiasmatriculadas', MateriaMatriculadaController::class)
 ->parameters([
     'materiasmatriculadas' => 'materiaMatriculada'
