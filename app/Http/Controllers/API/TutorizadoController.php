@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tutorizado;
+use App\Http\Resources\TutorizadoResource;
 use Illuminate\Http\Request;
 
 class TutorizadoController extends Controller
