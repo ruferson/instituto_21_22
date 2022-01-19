@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\CentroController;
 use App\Http\Controllers\API\NivelController;
+
+use App\Http\Controllers\API\MatriculaController;
 use App\Http\Controllers\API\PeriodoLectivoController;
 use App\Http\Controllers\API\MateriaMatriculadaController;
 use Illuminate\Http\Request;
@@ -22,6 +24,8 @@ use Tqdev\PhpCrudApi\Config;
 */
 
 Route::apiResource('centros', CentroController::class);
+
+Route::apiResource('matriculas', MatriculaController::class);
 
 Route::apiResource('niveles', NivelController::class)
 ->parameters([
