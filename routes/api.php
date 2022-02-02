@@ -58,6 +58,9 @@ Route::post('tokens/create', function (Request $request) {
     ]);
 })->name('login');
 
+
+Route::get('centros/indexOD', [CentroController::class, 'indexOD']) -> middleware('auth:sanctum');
+
 Route::middleware('auth:sanctum')->
     apiResource('centros', CentroController::class)
 ;
