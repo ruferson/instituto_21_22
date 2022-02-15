@@ -19,12 +19,16 @@ class Centro extends Model
         'verificado'
     ];
 
+<<<<<<< HEAD
     public function user(){
         return $this->hasOne(User::class);
     }
 
     public function coordinadorCentro()
     {
+=======
+    public function user() {
+>>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
         return $this->belongsTo(User::class, 'coordinador');
     }
 }

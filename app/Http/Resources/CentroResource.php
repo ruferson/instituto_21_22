@@ -19,8 +19,13 @@ class CentroResource extends JsonResource
             "codigo" => $this->codigo,
             "nombre" => $this->nombre,
             "web" => $this->web,
+<<<<<<< HEAD
             "coordinador" => $this->coordinador,
             "verificado" => $this->verificado
+=======
+            "coordinador" => new UserResource($this->user),
+            "verificado" => $this->verificado,
+>>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
         ];
     }
 }

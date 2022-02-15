@@ -66,7 +66,11 @@ class CentroPolicy
      */
     public function update(User $user, Centro $centro)
     {
+<<<<<<< HEAD
         if (($centroCordinado = $user->centroCoordinado()) &&
+=======
+        if (($centroCoordinado = $user->centroCoordinado) &&
+>>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
         $centro->id == $centroCoordinado->id) {
             return true;
         } else {
@@ -83,7 +87,17 @@ class CentroPolicy
      */
     public function delete(User $user, Centro $centro)
     {
+<<<<<<< HEAD
         return $user->isCoordinador($centro);
+=======
+
+        if (($centroCoordinado = $user->centroCoordinado) &&
+        $centro->id == $centroCoordinado->id) {
+            return true;
+        } else {
+            return false;
+        }
+>>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
     }
 
     /**
