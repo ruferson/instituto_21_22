@@ -14,6 +14,13 @@ class CentroResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            "id" => $this->id,
+            "codigo" => $this->codigo,
+            "nombre" => $this->nombre,
+            "web" => $this->web,
+            "coordinador" => $this->coordinador,
+            "verificado" => $this->verificado
+        ];
     }
 }

@@ -45,4 +45,22 @@ class User extends Authenticatable
     public function isAdministrator() {
         return $this->email == env("ADMIN_EMAIL", "pepe@gmail.com");
     }
+
+    public function isCoordinador($centro) {
+        if ($usuarioCoordinador = $centro->user){
+            return $this->id == $usuarioCoordinador->id;
+        } else {
+            return false;
+        }
+    }
+
+    public function centroCoordinado() {
+        return $this->hasOne(Centro::class, 'coordinador');
+    }
+
+    public function grupos()
+    {
+        return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
+    }
+
 }

@@ -14,4 +14,9 @@ class Nivel extends Model
         'nombre',
         'nivel_superior'
     ];
+
+    public function grupos() {
+        return $this->hasMany(Grupo::class, 'nivel');
+    }
+
 }
