@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Centro;
 use Illuminate\Http\Request;
 use App\Http\Resources\CentroResource;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Gate;
 
@@ -96,5 +98,10 @@ class CentroController extends Controller
     {
 //        $this->authorize('delete', $centro);
         $centro->delete();
+    }
+
+    public function miCentro() {
+        $user = Auth::user();
+        return new CentroResource($user->centroCoordinado);
     }
 }

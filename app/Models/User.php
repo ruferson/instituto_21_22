@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -46,14 +47,9 @@ class User extends Authenticatable
         return $this->email == env("ADMIN_EMAIL", "pepe@gmail.com");
     }
 
-<<<<<<< HEAD
-    public function isCoordinador($centro) {
-        if ($usuarioCoordinador = $centro->user){
-=======
     public function isCoordinadorCentro($centro) {
         if($usuarioCoordinador = $centro->user)
         {
->>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
             return $this->id == $usuarioCoordinador->id;
         } else {
             return false;
@@ -64,15 +60,27 @@ class User extends Authenticatable
         return $this->hasOne(Centro::class, 'coordinador');
     }
 
-<<<<<<< HEAD
-    public function grupos()
-    {
-        return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
-    }
-
-=======
     public function grupos() {
         return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
     }
->>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
+
+    public function notas()
+    {
+        return $this->hasMany(Nota::class);
+    }
+
+    public function esProfesor(){
+        //$usuarioProfesor = DB::table('materia__impartidas')->where('docente', $this->id);
+
+        $usuarioProfesor = $this->materiasImpartidas();
+
+        return $usuarioProfesor!=null;
+
+    }
+
+    public function materiasImpartidas(){
+        return $this->hasMany(MateriasImpartidas::class, 'docente');
+    }
+
+
 }

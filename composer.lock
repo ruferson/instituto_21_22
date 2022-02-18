@@ -1681,16 +1681,16 @@
         },
         {
             "name": "mevdschee/php-crud-api",
-            "version": "v2.13.1",
+            "version": "v2.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mevdschee/php-crud-api.git",
-                "reference": "0bcb9079b42457c97e8445b48fd533d4555f5609"
+                "reference": "5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mevdschee/php-crud-api/zipball/0bcb9079b42457c97e8445b48fd533d4555f5609",
-                "reference": "0bcb9079b42457c97e8445b48fd533d4555f5609",
+                "url": "https://api.github.com/repos/mevdschee/php-crud-api/zipball/5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7",
+                "reference": "5c7dfda38c4a3a1076b1b0e67cdb83a74a93aaf7",
                 "shasum": ""
             },
             "require": {
@@ -1751,9 +1751,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mevdschee/php-crud-api/issues",
-                "source": "https://github.com/mevdschee/php-crud-api/tree/v2.13.1"
+                "source": "https://github.com/mevdschee/php-crud-api/tree/v2.13.3"
             },
-            "time": "2021-11-07T11:49:24+00:00"
+            "time": "2022-01-31T14:04:38+00:00"
         },
         {
             "name": "monolog/monolog",

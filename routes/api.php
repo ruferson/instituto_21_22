@@ -17,7 +17,8 @@ use App\Http\Controllers\API\MateriaController;
 use App\Http\Controllers\API\MatriculaController;
 use App\Http\Controllers\API\PeriodoLectivoController;
 use App\Http\Controllers\API\MateriaMatriculadaController;
-
+use App\Http\Controllers\API\NotaController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ServerRequestInterface;
@@ -71,6 +72,8 @@ Route::apiResource('niveles', NivelController::class)
     'niveles' => 'nivel'
 ]);
 
+Route::middleware('auth:sanctum')
+->get('/miCentro', [CentroController::class, 'miCentro']);
 
 
 Route::apiResource('faltas_profesores', falta_profesorController::class)
@@ -83,6 +86,10 @@ Route::middleware('auth:sanctum')->
 
 Route::apiResource('tutorizados', TutorizadoController::class);
 
+
+Route::middleware('auth:sanctum')->apiResource('notas', NotaController::class);
+
+Route::middleware('auth:sanctum')->get('notas/media/{materia_id}', [UsersController::class, 'notaMedia']);
 
 
 Route::apiResource('materias', MateriaController::class);

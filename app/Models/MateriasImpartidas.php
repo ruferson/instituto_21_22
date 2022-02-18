@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Materia extends Model
+class MateriasImpartidas extends Model
 {
     use HasFactory;
+    protected $table = 'materia__impartidas';
 
     protected $fillable = [
-        'nombre'
+        'docente',
+        'grupo',
+        'materia'
     ];
-
-    public function notas()
-    {
-        return $this->hasMany(Nota::class);
-    }
 }
