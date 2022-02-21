@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CentroController;
+use App\Http\Controllers\API\CursoController;
 use App\Http\Controllers\API\NivelController;
 
 
@@ -97,6 +98,11 @@ Route::apiResource('materiasmatriculadas', MateriaMatriculadaController::class)
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:sanctum')->
+    apiResource('cursos', CursoController::class);
+
+Route::get('cursos/aulavirtual', [CursoController::class, 'aulavirtual']);
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
     $config = new Config([

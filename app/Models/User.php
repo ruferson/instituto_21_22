@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'usuario_av',
     ];
 
     /**
@@ -46,14 +47,9 @@ class User extends Authenticatable
         return $this->email == env("ADMIN_EMAIL", "pepe@gmail.com");
     }
 
-<<<<<<< HEAD
-    public function isCoordinador($centro) {
-        if ($usuarioCoordinador = $centro->user){
-=======
     public function isCoordinadorCentro($centro) {
         if($usuarioCoordinador = $centro->user)
         {
->>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
             return $this->id == $usuarioCoordinador->id;
         } else {
             return false;
@@ -64,15 +60,15 @@ class User extends Authenticatable
         return $this->hasOne(Centro::class, 'coordinador');
     }
 
-<<<<<<< HEAD
-    public function grupos()
-    {
-        return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
-    }
-
-=======
     public function grupos() {
         return $this->belongsToMany(Grupo::class, 'matriculas', 'alumno', 'grupo');
     }
->>>>>>> dd4f6ffaea26659a4dbccb8c93733a1cefe849ec
+
+    public function cursos(){
+        return $this->belongsToMany(Curso::class, 'curso_user', 'user_id', 'curso_id');
+    }
+
+    public function hasAV(){
+        return $this->usuario_av!=null;
+    }
 }
