@@ -15,13 +15,13 @@ class GrupoFactory extends Factory
     {
         return [
             'curso' => $this->faker->numberBetween(1, 4),
-            'letra' => $this->faker->text(),
+            'letra' => $this->faker->randomLetter(),
             'nombre' => $this->faker->name(),
-            'tutor' => $this->faker->name(),
+            'tutor' => $this->faker->numberBetween(1, 20),
             'anyoescolar' => $this->faker->numberBetween(1, 3),
             'nivel' => $this->faker->numberBetween(1, 4),
             'verificado' => $this->faker->boolean(),
-            'creador' => $this->faker->name(),
+            'creador' => $this->faker->numberBetween(1, 20),
         ];
     }
 }

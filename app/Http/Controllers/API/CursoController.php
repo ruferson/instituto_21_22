@@ -79,7 +79,7 @@ class CursoController extends Controller
 
     public function aulavirtual(Request $request){
         $response = Http::get('https://aulavirtual.murciaeduca.es/webservice/rest/server.php', [
-            'wstoken' => 'Taylor',
+            'wstoken' => env('AV_TOKEN'),
             'wsfunction' => 'core_enrol_get_users_courses',
             'moodlewsrestformat' => 'json',
             'userid' => $request->user->usuario_av,

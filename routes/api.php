@@ -102,7 +102,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->
     apiResource('cursos', CursoController::class);
 
-Route::get('cursos/aulavirtual', [CursoController::class, 'aulavirtual']);
+Route::middleware('auth:sanctum')->
+    get('/cursos/aulavirtual', [CursoController::class, 'aulavirtual']);
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
     $config = new Config([
