@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Curso;
 use App\Http\Resources\CursoResource;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class CursoController extends Controller
@@ -82,7 +83,7 @@ class CursoController extends Controller
             'wstoken' => env('AV_TOKEN'),
             'wsfunction' => 'core_enrol_get_users_courses',
             'moodlewsrestformat' => 'json',
-            'userid' => $request->user->usuario_av,
+            'userid' => Auth::user()->usuario_av,
         ]);
 
         return $response;

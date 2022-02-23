@@ -65,6 +65,8 @@ Route::middleware('auth:sanctum')->
     apiResource('centros', CentroController::class)
 ;
 
+
+
 Route::apiResource('matriculas', MatriculaController::class);
 
 Route::apiResource('niveles', NivelController::class)
@@ -100,10 +102,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->
-    apiResource('cursos', CursoController::class);
+    get('/cursos/aulavirtual', [CursoController::class, 'aulavirtual']);
 
 Route::middleware('auth:sanctum')->
-    get('/cursos/aulavirtual', [CursoController::class, 'aulavirtual']);
+    apiResource('cursos', CursoController::class);
+
+
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
     $config = new Config([
